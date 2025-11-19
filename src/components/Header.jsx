@@ -1,4 +1,4 @@
-
+// src/components/Header.jsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { containerStagger, fadeInUp } from "../animation/variants.js";
@@ -17,16 +17,23 @@ const mobileMenuVariants = {
     },
 };
 
-function Header({ theme, onToggleTheme, onProjectsClick }) {
+function Header({ theme, onToggleTheme, lang, onLanguageChange, onProjectsClick }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
-
-    const handleNavClick = () => setIsOpen(false);
+    const closeMenu = () => setIsOpen(false);
 
     const handleProjectsClick = () => {
         onProjectsClick?.();
-        setIsOpen(false);
+        closeMenu();
+    };
+
+    /* Переводы пунктов меню */
+    const labels = {
+        about: lang === "en" ? "About" : "À propos",
+        projects: lang === "en" ? "Projects" : "Projets",
+        skills: lang === "en" ? "Skills" : "Compétences",
+        contact: lang === "en" ? "Contact" : "Contact",
     };
 
     return (
@@ -37,28 +44,46 @@ function Header({ theme, onToggleTheme, onProjectsClick }) {
             animate="visible"
         >
             <div className="container header__content">
+
+                {/* LOGO */}
                 <motion.div className="header__logo" variants={fadeInUp}>
                     Irina Kiseleva
                 </motion.div>
 
                 {/* DESKTOP NAV */}
                 <motion.nav className="nav" variants={fadeInUp}>
-                    <a href="#about" onClick={handleNavClick}>
-                        About
-                    </a>
-                    <button className="nav__btn" onClick={handleProjectsClick}>
-                        Projects
-                    </button>
-                    <a href="#skills" onClick={handleNavClick}>
-                        Skills
-                    </a>
-                    <a href="#contact" onClick={handleNavClick}>
-                        Contact
-                    </a>
+                    <a href="#about" onClick={closeMenu}>{labels.about}</a>
+                    <button className="nav__btn" onClick={handleProjectsClick}>{labels.projects}</button>
+                    <a href="#skills" onClick={closeMenu}>{labels.skills}</a>
+                    <a href="#contact" onClick={closeMenu}>{labels.contact}</a>
                 </motion.nav>
 
+                {/* RIGHT SIDE */}
                 <div className="header__right">
-                    {/* THEME TOGGLE */}
+
+                    {/* === LANGUAGE SELECTOR WITH FLAGS === */}
+                    <div className="flags">
+                        <button
+                            className={`flag-btn ${lang === "en" ? "flag-active" : ""}`}
+                            onClick={() => onLanguageChange("en")}
+                            aria-label="Switch to English"
+                        >
+                            <span className="flag-emoji">GB</span>
+                            <span className="flag-label">EN</span>
+                        </button>
+
+                        <button
+                            className={`flag-btn ${lang === "fr" ? "flag-active" : ""}`}
+                            onClick={() => onLanguageChange("fr")}
+                            aria-label="Passer en français"
+                        >
+                            <span className="flag-emoji">FR</span>
+                            <span className="flag-label">FR</span>
+                        </button>
+                    </div>
+
+
+                    {/* THEME SWITCH */}
                     <motion.button
                         className="theme-toggle"
                         onClick={onToggleTheme}
@@ -67,11 +92,10 @@ function Header({ theme, onToggleTheme, onProjectsClick }) {
                         {theme === "light" ? "🌙 Dark" : "☀️ Light"}
                     </motion.button>
 
-                    {/* BURGER (only on mobile) */}
+                    {/* BURGER BUTTON */}
                     <button
                         className={`header__burger ${isOpen ? "header__burger--open" : ""}`}
                         onClick={toggleMenu}
-                        aria-label="Toggle navigation"
                     >
                         <span />
                         <span />
@@ -80,7 +104,7 @@ function Header({ theme, onToggleTheme, onProjectsClick }) {
                 </div>
             </div>
 
-            {/* MOBILE NAV */}
+            {/* MOBILE NAV DROPDOWN */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.nav
@@ -90,21 +114,14 @@ function Header({ theme, onToggleTheme, onProjectsClick }) {
                         animate="visible"
                         exit="exit"
                     >
-                        <a href="#about" onClick={handleNavClick}>
-                            About
-                        </a>
-                        <button className="mobile-nav__btn" onClick={handleProjectsClick}>
-                            Projects
-                        </button>
-                        <a href="#skills" onClick={handleNavClick}>
-                            Skills
-                        </a>
-                        <a href="#contact" onClick={handleNavClick}>
-                            Contact
-                        </a>
+                        <a href="#about" onClick={closeMenu}>{labels.about}</a>
+                        <button className="mobile-nav__btn" onClick={handleProjectsClick}>{labels.projects}</button>
+                        <a href="#skills" onClick={closeMenu}>{labels.skills}</a>
+                        <a href="#contact" onClick={closeMenu}>{labels.contact}</a>
                     </motion.nav>
                 )}
             </AnimatePresence>
+
         </motion.header>
     );
 }

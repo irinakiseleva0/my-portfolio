@@ -1,23 +1,47 @@
+import { motion } from "framer-motion";
+import { fadeInUp, containerStagger } from "../animation/variants.js";
 import skills from "../data/skills.js";
 
-function Skills() {
-    return (
-        <section id="skills" className="section skills">
-            <div className="container">
-                <h2>Skills</h2>
-                <p className="skills__intro">
-                    Here are some of the technologies and tools I’ve been working with:
-                </p>
+function Skills({ lang }) {
+    const t = {
+        en: {
+            title: "Skills",
+            intro: "Here are some of the technologies and tools I’ve been working with:",
+        },
+        fr: {
+            title: "Compétences",
+            intro: "Voici quelques technologies et outils avec lesquels je travaille :",
+        },
+    }[lang || "en"];
 
-                <ul className="skills-list">
+    return (
+        <motion.section
+            id="skills"
+            className="section skills"
+            variants={containerStagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+        >
+            <div className="container">
+                <motion.h2 variants={fadeInUp}>{t.title}</motion.h2>
+                <motion.p className="skills__intro" variants={fadeInUp}>
+                    {t.intro}
+                </motion.p>
+
+                <motion.ul className="skills-list" variants={containerStagger}>
                     {skills.map((skill) => (
-                        <li key={skill} className="skills-list__item">
+                        <motion.li
+                            key={skill}
+                            className="skills-list__item"
+                            variants={fadeInUp}
+                        >
                             {skill}
-                        </li>
+                        </motion.li>
                     ))}
-                </ul>
+                </motion.ul>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

@@ -1,46 +1,74 @@
+import { motion } from "framer-motion";
+import { fadeInUp, containerStagger } from "../animation/variants.js";
+// если используешь public/profile.jpg:
+// const profile = "/profile.jpg";
 import profile from "../assets/profile.jpg";
 
-function Hero({ onProjectsClick }) {
-    return (
-        <section className="hero">
-            <div className="container hero__content">
+function Hero({ onProjectsClick, lang }) {
+    const t = {
+        en: {
+            title: "Hello, I'm ",
+            subtitleLine1: "2nd-year Computer Science student at EPITA",
+            subtitleLine2: "Software Developer",
+            description:
+                "I enjoy learning by building real projects and improving my programming skills. Right now I'm focusing on C, Python, JavaScript and React, as well as core computer science fundamentals.",
+            btnProjects: "View My Projects",
+            btnContact: "Contact Me",
+        },
+        fr: {
+            title: "Bonjour, je suis ",
+            subtitleLine1: "Étudiante en 2ᵉ année d’informatique à EPITA",
+            subtitleLine2: "Développeuse logiciel",
+            description:
+                "J’aime apprendre en réalisant des projets concrets et en améliorant mes compétences en programmation. En ce moment, je me concentre sur C, Python, JavaScript, React et les bases de l’informatique.",
+            btnProjects: "Voir mes projets",
+            btnContact: "Me contacter",
+        },
+    }[lang || "en"];
 
+    return (
+        <motion.section
+            className="hero"
+            variants={containerStagger}
+            initial="hidden"
+            animate="visible"
+        >
+            <div className="container hero__content">
                 {/* LEFT TEXT SIDE */}
-                <div className="hero__text">
+                <motion.div className="hero__text" variants={fadeInUp}>
                     <h1 className="hero__title">
-                        Hello, I'm <span className="highlight">Irina</span>
+                        {t.title}
+                        <span className="highlight">Irina Kiseleva</span>
                     </h1>
 
                     <p className="hero__subtitle">
-                        2nd-year Computer Science student at <strong>EPITA</strong><br />
-                        Frontend Developer • React Enthusiast
+                        {t.subtitleLine1}
+                        <br />
+                        {t.subtitleLine2}
                     </p>
 
-                    <p className="hero__description">
-                        I enjoy building clean, modern user interfaces and learning new
-                        technologies every day. Currently focusing on React, UI/UX design,
-                        and improving my software engineering skills.
-                    </p>
+                    <p className="hero__description">{t.description}</p>
 
                     <div className="hero__buttons">
                         <button className="btn-primary" onClick={onProjectsClick}>
-                            View My Projects
+                            {t.btnProjects}
                         </button>
 
                         <a href="#contact" className="btn-secondary">
-                            Contact Me
+                            {t.btnContact}
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* RIGHT PHOTO SIDE */}
-                <img
+                <motion.img
                     src={profile}
                     alt="Profile"
                     className="hero__photo"
+                    variants={fadeInUp}
                 />
             </div>
-        </section>
+        </motion.section>
     );
 }
 
