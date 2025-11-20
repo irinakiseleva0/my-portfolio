@@ -17,7 +17,12 @@ const mobileMenuVariants = {
     },
 };
 
-function Header({ theme, onToggleTheme, lang, onLanguageChange, onProjectsClick }) {
+function Header({ theme,
+    onToggleTheme,
+    lang,
+    onLanguageChange,
+    onProjectsClick,
+    activeSection, }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -114,10 +119,37 @@ function Header({ theme, onToggleTheme, lang, onLanguageChange, onProjectsClick 
                         animate="visible"
                         exit="exit"
                     >
-                        <a href="#about" onClick={closeMenu}>{labels.about}</a>
-                        <button className="mobile-nav__btn" onClick={handleProjectsClick}>{labels.projects}</button>
-                        <a href="#skills" onClick={closeMenu}>{labels.skills}</a>
-                        <a href="#contact" onClick={closeMenu}>{labels.contact}</a>
+                        <a
+                            href="#about"
+                            onClick={closeMenu}
+                            className={activeSection === "about" ? "active-link" : ""}
+                        >
+                            {labels.about}
+                        </a>
+
+                        <button
+                            className={`nav__btn ${activeSection === "projects" ? "active-link" : ""}`}
+                            onClick={handleProjectsClick}
+                        >
+                            {labels.projects}
+                        </button>
+
+                        <a
+                            href="#skills"
+                            onClick={closeMenu}
+                            className={activeSection === "skills" ? "active-link" : ""}
+                        >
+                            {labels.skills}
+                        </a>
+
+                        <a
+                            href="#contact"
+                            onClick={closeMenu}
+                            className={activeSection === "contact" ? "active-link" : ""}
+                        >
+                            {labels.contact}
+                        </a>
+
                     </motion.nav>
                 )}
             </AnimatePresence>

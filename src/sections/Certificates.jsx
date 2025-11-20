@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { fadeInUp, containerStagger } from "../animation/variants.js";
+import { fadeInUp, containerStagger, flipIn, listStagger } from "../animation/variants.js";
+
+
 
 const certificates = {
     en: [

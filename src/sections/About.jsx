@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { fadeInUp, containerStagger } from "../animation/variants.js";
+import { fadeInLeft, fadeInUp, containerStagger } from "../animation/variants.js";
 
-function About({ lang }) {
+function About({ lang, refProp }) {
   const t = {
     en: {
       title: "About Me",
@@ -34,6 +34,7 @@ function About({ lang }) {
   return (
     <motion.section
       id="about"
+      ref={refProp}
       className="section about"
       variants={containerStagger}
       initial="hidden"
@@ -41,18 +42,20 @@ function About({ lang }) {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="container about__content">
-        <motion.div className="about__text" variants={fadeInUp}>
+        {/* Текст: выезд слева + fade-in */}
+        <motion.div className="about__text" variants={fadeInLeft}>
           <h2>{t.title}</h2>
           <p>{t.p1}</p>
           <p>{t.p2}</p>
           <p>{t.p3}</p>
         </motion.div>
 
-        <motion.div className="about__details" variants={fadeInUp}>
+        {/* Факты: простой fadeInUp */}
+        <motion.div className="about__facts" variants={fadeInUp}>
           <h3>{t.factsTitle}</h3>
           <ul>
-            {t.facts.map((item) => (
-              <li key={item}>• {item}</li>
+            {t.facts.map((fact) => (
+              <li key={fact}>{fact}</li>
             ))}
           </ul>
         </motion.div>
