@@ -1291,3 +1291,72 @@ body[data-theme="dark"] .back-to-top {
 .skill-chip:hover {
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
 }
+
+.certificates__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.certificate-card {
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="dark"] .certificate-card {
+    background: #020617;
+    border-color: #1f2937;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.certificate-card__issuer {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .certificate-card__issuer {
+    color: #9ca3af;
+}
+
+.certificate-card__details {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.certificate-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 6px 12px;
+    border: 1px solid #2563eb;
+}
+
+.certificate-card__link:hover {
+    background: rgba(37, 99, 235, 0.06);
+}
+
+.certificate-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    border: 1px solid #2563eb;
+    color: #2563eb;
+}
+
+.certificate-card__link:hover {
+    background: rgba(37, 99, 235, 0.08);
+}
