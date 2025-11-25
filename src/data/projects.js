@@ -1,5 +1,3 @@
-// src/data/projects.js
-
 const projects = [
   {
     id: 1,
@@ -17,18 +15,21 @@ const projects = [
 
   {
     id: 2,
+    featured: true,
     title: {
-      en: "Online File Converter (Django + React)",
-      fr: "Convertisseur de fichiers en ligne (Django + React)",
+      en: "Online File Converter (Django)",
+      fr: "Convertisseur de fichiers en ligne (Django)",
     },
     description: {
-      en: "A full-stack project originally built with Django and later extended with a modern React frontend. The app allows users to convert files and values in real time, with server-side processing and a clean UI.",
-      fr: "Un projet full-stack initialement créé avec Django puis enrichi d’un frontend en React. L’application permet de convertir des fichiers et des valeurs en temps réel, avec un traitement côté serveur et une interface claire.",
+      en: "A Django-based web application that allows users to upload a file and convert it between formats (PDF, JPG, PNG). Includes server-side validation and dynamic file processing, deployed on Render.",
+      fr: "Une application web Django permettant de téléverser un fichier et de le convertir entre plusieurs formats (PDF, JPG, PNG). Avec validation côté serveur et traitement dynamique des fichiers, déployée sur Render.",
     },
-    tech: ["Python", "Django", "React", "Pillow", "JavaScript", "CSS", "Render"],
+    tech: ["Python", "Django", "Pillow", "HTML", "CSS", "Render"],
     link: "https://converter-v2.onrender.com/converter/",
-    note: "⚠️ First load may take ~30s (free hosting)."
+    note:
+      "⚠️ First load may take ~30s (free hosting).",
   },
+
 
 ];
 
