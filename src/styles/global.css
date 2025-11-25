@@ -1055,7 +1055,7 @@ body[data-theme="dark"] .back-to-top {
     opacity: 1 !important;
 }
 
-/* ========== EXPERIENCE SECTION ========== */
+/*EXPERIENCE SECTION*/
 
 .experience {
     background: var(--bg);
@@ -1117,18 +1117,16 @@ body[data-theme="dark"] .back-to-top {
     }
 }
 
-/* Сетка проектов */
 .projects-grid {
     margin-top: 18px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 16px;
 
-    /* важно для 3D-эффекта */
     perspective: 900px;
 }
 
-/* ========== CONTACT SECTION ========== */
+/*CONTACT SECTION*/
 
 .contact__content {
     display: grid;
@@ -1226,14 +1224,70 @@ body[data-theme="dark"] .back-to-top {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
 .project-note {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.75rem;
-  color: #888;
-  line-height: 1.2;
+    display: block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.2;
 }
 
 [data-theme="dark"] .project-note {
-  color: #aaa;
+    color: #aaa;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+    margin-top: 1.5rem;
+}
+
+.skills-category {
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="dark"] .skills-category {
+    background: #020617;
+    border-color: #1f2937;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.skills-category__title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-chip {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color, #d1d5db);
+    background: rgba(148, 163, 184, 0.07);
+    cursor: default;
+    transition: 0.2s ease;
+}
+
+[data-theme="dark"] .skill-chip {
+    border-color: #374151;
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.skill-chip:hover {
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
 }
