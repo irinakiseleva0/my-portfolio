@@ -12,12 +12,11 @@ const experienceItems = {
         {
             title: "Academic Projects at EPITA",
             role: "Software Developer (Student)",
-            period: "2023 — Present",
+            period: "2024 — 2027",
             bullets: [
-                "Worked on C programming assignments focusing on memory management, pointers and low-level problem solving.",
-                "Developed Python scripts and small tools to automate tasks and practice algorithmic thinking.",
-                "Built web interfaces using HTML, CSS, JavaScript and React to improve frontend skills.",
-                "Collaborated with classmates on group projects, practicing Git workflows (branches, merge requests).",
+                "Wrote Python scripts and small tools to automate tasks and strengthen algorithmic thinking.",
+                "Built web interfaces with HTML, CSS, JavaScript, and React to improve my frontend skills.",
+                "Worked with classmates on group assignments while practicing Git workflows (branches, merge requests).",
             ],
         },
     ],
@@ -25,12 +24,11 @@ const experienceItems = {
         {
             title: "Projets académiques à EPITA",
             role: "Développeuse logiciel (étudiante)",
-            period: "2023 — Aujourd’hui",
+            period: "2024 — 2027",
             bullets: [
-                "Travail sur des projets en C axés sur la gestion de la mémoire, les pointeurs et la résolution de problèmes bas niveau.",
-                "Développement de scripts et petits outils en Python pour automatiser des tâches et pratiquer la pensée algorithmique.",
-                "Création d’interfaces web avec HTML, CSS, JavaScript et React pour améliorer mes compétences frontend.",
-                "Collaboration avec des camarades sur des projets de groupe en utilisant Git (branches, merge requests).",
+                "Développement de scripts et de petits outils en Python pour automatiser certaines tâches et renforcer ma réflexion algorithmique.",
+                "Création d’interfaces web avec HTML, CSS, JavaScript et React pour améliorer mes compétences en frontend.",
+                "Collaboration sur des projets de groupe avec Git, en utilisant les branches et les merge requests.",
             ],
         },
     ],

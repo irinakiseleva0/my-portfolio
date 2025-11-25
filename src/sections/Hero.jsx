@@ -11,7 +11,7 @@ function Hero({ onProjectsClick, lang }) {
             subtitleLine1: "2nd-year Computer Science student at EPITA",
             subtitleLine2: "Software Developer",
             description:
-                "I enjoy learning by building real projects and improving my programming skills. Right now I'm focusing on C, Python, JavaScript and React, as well as core computer science fundamentals.",
+                "I like learning by creating real projects and gradually improving my programming skills. Right now, I'm focusing on C, Python, JavaScript, React, and strengthening my core computer science foundations.",
             btnProjects: "View My Projects",
             btnContact: "Contact Me",
             cvEn: "Download CV (EN)",
@@ -22,7 +22,7 @@ function Hero({ onProjectsClick, lang }) {
             subtitleLine1: "Étudiante en 2ᵉ année d’informatique à EPITA",
             subtitleLine2: "Développeuse logiciel",
             description:
-                "J’aime apprendre en réalisant des projets concrets et en améliorant mes compétences en programmation. En ce moment, je me concentre sur C, Python, JavaScript, React et les bases de l’informatique.",
+                "J’apprends surtout en réalisant des projets concrets et en développant mes compétences en programmation. En ce moment, je me concentre sur C, Python, JavaScript, React, ainsi que sur les bases fondamentales de l’informatique.",
             btnProjects: "Voir mes projets",
             btnContact: "Me contacter",
             cvEn: "Télécharger le CV (EN)",
@@ -39,7 +39,6 @@ function Hero({ onProjectsClick, lang }) {
             animate="visible"
         >
             <div className="container hero__content">
-                {/* LEFT TEXT SIDE */}
                 <motion.div className="hero__text" variants={fadeInUp}>
                     <h1 className="hero__title">
                         {t.title}
@@ -78,7 +77,6 @@ function Hero({ onProjectsClick, lang }) {
 
                 </motion.div>
 
-                {/* RIGHT PHOTO SIDE */}
                 <motion.img
                     src={profile}
                     alt="Profile"

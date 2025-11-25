@@ -8,38 +8,28 @@ const projects = [
       fr: "Site portfolio",
     },
     description: {
-      en: "A personal portfolio built with React and Vite to showcase my projects and skills.",
-      fr: "Un portfolio personnel réalisé avec React et Vite pour présenter mes projets et compétences.",
+      en: "A personal portfolio built with React and Vite to showcase my projects, skills and experience as a 2nd-year CS student at EPITA.",
+      fr: "Un portfolio personnel développé avec React et Vite pour présenter mes projets, compétences et expérience en tant qu’étudiante en 2ᵉ année à l’EPITA.",
     },
-    tech: ["React", "Vite", "CSS"],
-    link: "#",
+    tech: ["React", "Vite", "CSS", "Framer Motion"],
+    link: "https://my-portfolio-rosy-iota-74.vercel.app",
   },
+
   {
     id: 2,
     title: {
-      en: "Landing Page",
-      fr: "Page d’atterrissage",
+      en: "Online File Converter (Django + React)",
+      fr: "Convertisseur de fichiers en ligne (Django + React)",
     },
     description: {
-      en: "A responsive landing page with a modern layout and smooth scrolling.",
-      fr: "Une page d’atterrissage responsive avec une mise en page moderne et un défilement fluide.",
+      en: "A full-stack project originally built with Django and later extended with a modern React frontend. The app allows users to convert files and values in real time, with server-side processing and a clean UI.",
+      fr: "Un projet full-stack initialement créé avec Django puis enrichi d’un frontend en React. L’application permet de convertir des fichiers et des valeurs en temps réel, avec un traitement côté serveur et une interface claire.",
     },
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "#",
+    tech: ["Python", "Django", "React", "Pillow", "JavaScript", "CSS", "Render"],
+    link: "https://converter-v2.onrender.com/converter/",
+    note: "⚠️ First load may take ~30s (free hosting)."
   },
-  {
-    id: 3,
-    title: {
-      en: "Todo App",
-      fr: "Application Todo",
-    },
-    description: {
-      en: "A simple todo application with task filtering and local storage.",
-      fr: "Une application de tâches simple avec filtres et sauvegarde locale.",
-    },
-    tech: ["React"],
-    link: "#",
-  },
+
 ];
 
 export default projects;

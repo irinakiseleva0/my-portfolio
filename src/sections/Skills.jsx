@@ -1,45 +1,62 @@
 import { motion } from "framer-motion";
-import { fadeInUp, containerStagger } from "../animation/variants.js";
+import { fadeInUp, containerStagger, listStagger } from "../animation/variants.js";
 import skills from "../data/skills.js";
 
-function Skills({ lang }) {
+function Skills({ lang, refProp }) {
     const t = {
         en: {
             title: "Skills",
-            intro: "Here are some of the technologies and tools I’ve been working with:",
+            frontend: "Frontend",
+            backend: "Backend",
+            systems: "Low-level & Systems",
+            tools: "Tools",
         },
         fr: {
             title: "Compétences",
-            intro: "Voici quelques technologies et outils avec lesquels je travaille :",
+            frontend: "Frontend",
+            backend: "Backend",
+            systems: "Bas niveau & Systèmes",
+            tools: "Outils",
         },
     }[lang || "en"];
 
     return (
         <motion.section
             id="skills"
+            ref={refProp}
             className="section skills"
             variants={containerStagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.25 }}
         >
             <div className="container">
                 <motion.h2 variants={fadeInUp}>{t.title}</motion.h2>
-                <motion.p className="skills__intro" variants={fadeInUp}>
-                    {t.intro}
-                </motion.p>
 
-                <motion.ul className="skills-list" variants={containerStagger}>
-                    {skills.map((skill) => (
-                        <motion.li
-                            key={skill}
-                            className="skills-list__item"
+                <div className="skills-grid">
+                    {Object.entries(skills).map(([category, list]) => (
+                        <motion.div
+                            key={category}
+                            className="skills-category"
                             variants={fadeInUp}
                         >
-                            {skill}
-                        </motion.li>
+                            <h3 className="skills-category__title">{t[category]}</h3>
+
+                            <motion.ul className="skills-list" variants={listStagger}>
+                                {list.map((skill) => (
+                                    <motion.li
+                                        key={skill}
+                                        className="skill-chip"
+                                        variants={fadeInUp}
+                                        whileHover={{ scale: 1.06 }}
+                                    >
+                                        {skill}
+                                    </motion.li>
+                                ))}
+                            </motion.ul>
+                        </motion.div>
                     ))}
-                </motion.ul>
+                </div>
             </div>
         </motion.section>
     );

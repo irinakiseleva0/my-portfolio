@@ -5,23 +5,23 @@ function Education({ lang }) {
     const t = {
         en: {
             title: "Education",
-            school: "EPITA — School of Engineering and Computer Science",
+            school: "EPITA - School of Engineering and Computer Science",
             degree: "Bachelor’s in Computer Science and Engineering",
-            year: "2023 — Present",
-            bullet1: "Currently in 2nd year",
-            bullet2: "Courses: Algorithms, C Programming, Python, Web Development",
-            bullet3: "Strong focus on computational thinking & engineering foundations",
+            year: "2024 - 2027",
+            bullet1: "Currently in the 2nd year",
+            bullet2: "Courses include Algorithms, C Programming, Python, and Web Development",
+            bullet3: "Strong emphasis on computational thinking and solid engineering fundamentals",
         },
         fr: {
             title: "Formation",
-            school: "EPITA — École d’ingénieurs en informatique",
+            school: "EPITA - École d’ingénieurs en informatique",
             degree: "Licence en ingénierie et informatique",
-            year: "2023 — Aujourd’hui",
+            year: "2024 - 2027",
             bullet1: "Actuellement en 2ᵉ année",
             bullet2:
-                "Cours : algorithmes, programmation en C, Python, développement web",
+                "Cours suivis : algorithmes, programmation en C, Python, développement web",
             bullet3:
-                "Accent sur la pensée computationnelle et les bases de l’ingénierie",
+                "Mise en avant de la pensée computationnelle et des bases solides en ingénierie",
         },
     }[lang || "en"];
 

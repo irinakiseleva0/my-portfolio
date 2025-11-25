@@ -1,3 +1,4 @@
+// src/sections/Projects.jsx
 import { motion } from "framer-motion";
 import { fadeInUp, containerStagger } from "../animation/variants.js";
 import projects from "../data/projects.js";
@@ -24,9 +25,16 @@ function ProjectCard({ project, lang }) {
       )}
 
       {project.link && (
-        <a href={project.link} target="_blank" rel="noreferrer">
-          {buttonLabel}
-        </a>
+        <>
+          <a href={project.link} target="_blank" rel="noreferrer">
+            {buttonLabel}
+          </a>
+
+          {/* note — маленькая серая строка */}
+          {project.note && (
+            <small className="project-note">{project.note}</small>
+          )}
+        </>
       )}
     </motion.article>
   );

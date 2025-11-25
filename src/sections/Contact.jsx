@@ -33,8 +33,6 @@ function Contact({ lang, refProp }) {
             socialTitle: "Ou contactez-moi ici",
         },
     }[lang || "en"];
-
-    // поля формы – совпадают с {{name}}, {{email}}, {{message}} в шаблоне EmailJS
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -120,7 +118,7 @@ function Contact({ lang, refProp }) {
             viewport={{ once: true, amount: 0.25 }}
         >
             <div className="container contact__content">
-                {/* Левая колонка: текст + ссылки */}
+
                 <motion.div className="contact__info" variants={fadeInUp}>
                     <h2>{t.title}</h2>
                     <p>{t.intro}</p>
@@ -157,7 +155,7 @@ function Contact({ lang, refProp }) {
                     </ul>
                 </motion.div>
 
-                {/* Правая колонка: карточка-форма */}
+
                 <motion.form
                     className="contact__form"
                     onSubmit={handleSubmit}

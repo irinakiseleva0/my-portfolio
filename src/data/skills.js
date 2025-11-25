@@ -1,14 +1,32 @@
 // src/data/skills.js
 
-const skills = [
+const skills = {
+  frontend: [
     "HTML5",
-    "CSS3 (Flexbox, Grid)",
+    "CSS3 (Grid, Flexbox, Animations)",
     "JavaScript (ES6+)",
-    "React",
+    "React (Hooks, Components)",
     "TypeScript (basic)",
-    "Git / GitHub",
-    "Responsive Design",
-    "REST APIs",
-];
+    "Responsive / Mobile-First Design",
+  ],
+
+  backend: [
+    "Python",
+    "Django (Views, Routing, File Processing)",
+    "REST APIs (fetch, JSON)",
+    "Basic SQL (MySQL / PostgreSQL)",
+  ],
+
+  systems: [
+    "C Programming",
+    "Linux Basics",
+  ],
+
+  tools: [
+    "Git / GitHub / GitLab",
+    "VS Code",
+    "Render / Vercel",
+  ],
+};
 
 export default skills;

@@ -20,7 +20,6 @@ export const containerStagger = {
     },
   },
 };
-// плавный выезд слева
 export const fadeInLeft = {
   hidden: { opacity: 0, x: -40 },
   visible: {
@@ -33,7 +32,6 @@ export const fadeInLeft = {
   },
 };
 
-// scale-in, чуть увеличивается при появлении
 export const scaleIn = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: {
@@ -46,7 +44,6 @@ export const scaleIn = {
   },
 };
 
-// flip-in по оси X
 export const flipIn = {
   hidden: { opacity: 0, rotateX: -12, y: 8 },
   visible: {
@@ -60,7 +57,6 @@ export const flipIn = {
   },
 };
 
-// общий stagger-для списков (children должны иметь свои variants)
 export const listStagger = {
   hidden: { opacity: 0 },
   visible: {

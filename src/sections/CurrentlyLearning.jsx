@@ -6,25 +6,25 @@ function CurrentlyLearning({ lang }) {
         en: {
             title: "Currently learning",
             subtitle:
-                "Here are some of the topics and technologies I’m actively exploring right now:",
+                "Here are some of the topics and technologies I’m focusing on right now:",
             items: [
-                "Improving my React and modern JavaScript skills",
-                "Writing cleaner and more maintainable code in C and Python",
-                "Getting more comfortable with Git/GitHub/GitLab workflows",
-                "Understanding computer science fundamentals more deeply",
-                "Practicing English and French in technical contexts",
+                "Getting better at React and modern JavaScript",
+                "Writing cleaner, more maintainable code in C and Python",
+                "Becoming more confident with Git, GitHub, and GitLab workflows",
+                "Strengthening my understanding of core computer science concepts",
+                "Practicing English and French in technical situations",
             ],
         },
         fr: {
             title: "En ce moment j’apprends",
             subtitle:
-                "Voici quelques sujets et technologies que j’explore activement en ce moment :",
+                "Voici quelques sujets et technologies sur lesquels je me concentre en ce moment:",
             items: [
-                "Améliorer mes compétences en React et JavaScript moderne",
-                "Écrire un code plus clair et maintenable en C et Python",
-                "Être plus à l’aise avec les workflows Git / GitHub / GitLab",
+                "Améliorer mes compétences en React et en JavaScript moderne",
+                "Écrire un code plus clair et plus maintenable en C et Python",
+                "Être plus à l’aise avec les workflows Git, GitHub et GitLab",
                 "Approfondir les bases théoriques de l’informatique",
-                "Pratiquer l’anglais et le français dans un contexte technique",
+                "Pratiquer l’anglais et le français dans des contextes techniques",
             ],
         },
     }[lang || "en"];
