@@ -14,6 +14,21 @@ const projects = [
   },
 
   {
+    id: 3,
+    featured: true,
+    title: {
+      en: "Cyberpunk Pac-Man",
+      fr: "Cyberpunk Pac-Man",
+    },
+    description: {
+      en: "A neon-styled arcade maze-chase game built solo with Python and raylib, featuring multiple game modes, a progression and unlockables system, a cinematic UI shell, controller support, and automated tests wired into a GitHub Actions CI pipeline.",
+      fr: "Un jeu d'arcade type labyrinthe au style néon, développé en solo avec Python et raylib. Comprend plusieurs modes de jeu, un système de progression et de déblocages, une interface cinématique, le support manette, ainsi que des tests automatisés intégrés dans un pipeline CI GitHub Actions.",
+    },
+    tech: ["Python", "raylib", "GitHub Actions", "CI/CD"],
+    link: "https://github.com/irinakiseleva0/Pacman",
+  },
+
+  {
     id: 2,
     featured: true,
     title: {
