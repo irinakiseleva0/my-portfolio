@@ -1362,6 +1362,7 @@ body[data-theme="dark"] .skills__card {
 
 .skills__card {
     transform-style: preserve-3d;
+}
 
     body[data-theme="dark"] .skill-chip {
         background: rgba(30, 64, 175, 0.22);
