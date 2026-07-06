@@ -32,14 +32,14 @@ const projects = [
     id: 2,
     featured: true,
     title: {
-      en: "Online File Converter (Django)",
-      fr: "Convertisseur de fichiers en ligne (Django)",
+      en: "Currency Converter (Django)",
+      fr: "Convertisseur de devises (Django)",
     },
     description: {
-      en: "A Django-based web application that allows users to upload a file and convert it between formats (PDF, JPG, PNG). Includes server-side validation and dynamic file processing, deployed on Render.",
-      fr: "Une application web Django permettant de téléverser un fichier et de le convertir entre plusieurs formats (PDF, JPG, PNG). Avec validation côté serveur et traitement dynamique des fichiers, déployée sur Render.",
+      en: "A Django web app that converts amounts between currencies using live exchange rates fetched from the exchangerate-api.com API. Includes basic user registration and login with Django's built-in auth system, deployed on Render.",
+      fr: "Une application web Django qui convertit des montants entre devises en utilisant des taux de change en temps réel récupérés depuis l'API exchangerate-api.com. Comprend une inscription et une connexion utilisateur basiques via le système d'authentification intégré de Django, déployée sur Render.",
     },
-    tech: ["Python", "Django", "Pillow", "HTML", "CSS", "Render"],
+    tech: ["Python", "Django", "REST API", "HTML", "CSS", "Render"],
     link: "https://converter-v2.onrender.com/converter/",
     note:
       "⚠️ First load may take ~30s (free hosting).",
