@@ -7,6 +7,7 @@ import profile from "../assets/profile.jpg";
 function Hero({ onProjectsClick, lang }) {
     const t = {
         en: {
+            badge: "Open to internships — Paris, 2026",
             title: "Hello, I'm ",
             subtitleLine1: "2nd-year Computer Science student at EPITA",
             subtitleLine2: "Software Developer",
@@ -18,6 +19,7 @@ function Hero({ onProjectsClick, lang }) {
             cvFr: "Download CV (FR)",
         },
         fr: {
+            badge: "Ouverte aux stages — Paris, 2026",
             title: "Bonjour, je suis ",
             subtitleLine1: "Étudiante en 2ᵉ année d’informatique à EPITA",
             subtitleLine2: "Développeuse logiciel",
@@ -40,6 +42,11 @@ function Hero({ onProjectsClick, lang }) {
         >
             <div className="container hero__content">
                 <motion.div className="hero__text" variants={fadeInUp}>
+                    <span className="hero__badge">
+                        <span className="hero__badge-dot"></span>
+                        {t.badge}
+                    </span>
+
                     <h1 className="hero__title">
                         {t.title}
                         <span className="highlight">Irina Kiseleva</span>
